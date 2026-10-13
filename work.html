@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work | Saadurya K V</title>
+<meta name="description" content="Thirteen product case studies: growth, strategy, specs, research, UX, systems and AI.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%230F766E'/%3E%3Ctext x='16' y='21.5' font-family='sans-serif' font-size='14' font-weight='700' fill='white' text-anchor='middle'%3ESK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html">Saadurya K V</a>
+<nav aria-label="Main"><a href="index.html">Home</a><a href="work.html" aria-current="page">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+<button class="theme-btn" type="button" aria-label="Switch theme"></button>
+</div></header>
+<main>
+
+<section><div class="wrap">
+<div class="section-head"><h1 style="font-size:clamp(34px,5vw,52px)">Thirteen case studies</h1>
+<p>Each one covers the problem, the call I made and what it shows about how I work. Figures marked as assumptions in the originals are still assumptions here. Want the full write-up? <a href="contact.html">Ask me</a>.</p></div>
+<ul class="filters" aria-label="Filter by type"><li><button type="button" data-tag="all" aria-pressed="true">All</button></li><li><button type="button" data-tag="growth" aria-pressed="false">Growth</button></li><li><button type="button" data-tag="strategy" aria-pressed="false">Strategy</button></li><li><button type="button" data-tag="specs" aria-pressed="false">Specs</button></li><li><button type="button" data-tag="research" aria-pressed="false">Research</button></li><li><button type="button" data-tag="ux" aria-pressed="false">UX</button></li><li><button type="button" data-tag="systems" aria-pressed="false">Systems</button></li><li><button type="button" data-tag="ai" aria-pressed="false">AI</button></li><li><button type="button" data-tag="built" aria-pressed="false">Built</button></li></ul>
+<p class="empty" id="count" aria-live="polite">13 projects</p>
+<div class="projects">
+<article class="project" id="airbnb" data-tags="growth strategy">
+<div><p class="ctx">Growth strategy, travel marketplace</p><h3>A product-led growth engine for Airbnb India</h3><ul class="tags"><li>Growth</li><li>Strategy</li></ul></div>
+<dl><dt>The problem</dt><dd>Four growth loops looked equally attractive, but only one of them compounds without paying for incentives.</dd><dt>What I decided</dt><dd>Test one bet first: Guest → Host demand intelligence, run as a manual report with no engineering. Creator referral, travel-intent discovery and hidden-gem demand signals wait until that evidence exists.</dd><dt>What it shows</dt><dd>Prioritising by cost to test, and marking which claims are hypotheses and which are sourced.</dd></dl>
+</article>
+<article class="project" id="zepto" data-tags="growth">
+<div><p class="ctx">Product case study, quick commerce. Group work with Syed Falzuddin</p><h3>Raising order value at Zepto&#x27;s Cart Review</h3><ul class="tags"><li>Growth</li></ul></div>
+<dl><dt>The problem</dt><dd>Zepto leads on orders per store (2,140 a day against Blinkit&#x27;s 1,425) but trails on order value. The cart decides what counts as “enough” by location and demand, not by what the shopper is buying.</dd><dt>What I decided</dt><dd>Build a personal milestone ladder first, replacing the fixed ₹499, ₹699 and ₹899 rungs. Two more solutions follow. One shopper type gets none of them: the Emergency Buyer, because pushing a one-item mission to add more puts the low-ticket orders that drive store throughput at risk.</dd><dt>What it shows</dt><dd>Choosing what to build first, and saying plainly who a solution does not serve.</dd></dl>
+</article>
+<article class="project" id="customer-ops" data-tags="strategy ai">
+<div><p class="ctx">Product strategy, B2B AI platform</p><h3>From AI that answers to AI that finishes the job</h3><ul class="tags"><li>Strategy</li><li>AI</li></ul></div>
+<dl><dt>The problem</dt><dd>Support AI can reply to a customer, but a post-purchase issue is only resolved when the order system confirms it. Each human-handled contact costs about $8.</dd><dt>What I decided</dt><dd>Start with read-only order and delivery resolution for mid-market e-commerce brands, on top of the helpdesk they already run. At a 25% automation rate, every 10,000 tickets a month saves $20,025 against $3,750 of platform cost, 5.3 times over.</dd><dt>What it shows</dt><dd>Picking a wedge and a segment, pricing it with stated inputs against Zendesk, and naming the evidence gap: my interviews were with four small founders, not mid-market buyers.</dd></dl>
+</article>
+<article class="project" id="pulsereel" data-tags="specs">
+<div><p class="ctx">PRD, short-video platform in India</p><h3>PulseReel Circuit Breaker</h3><ul class="tags"><li>Specs</li></ul></div>
+<dl><dt>The problem</dt><dd>One unverified reel became tied to a nationwide protest movement within 72 hours, and the recommender had no way to tell ordinary virality from fast mobilisation.</dd><dt>What I decided</dt><dd>Detect spread patterns, never political viewpoints. Use in-app viewer feedback as one signal, not as proof, and keep every consequential decision reviewable and reversible.</dd><dt>What it shows</dt><dd>Writing a spec with firm boundaries, including what the system is not: an investigation or fact-checking tool.</dd></dl>
+</article>
+<article class="project" id="gymbuddy" data-tags="built research">
+<div><p class="ctx">Product case study and V1 prototype, fitness</p><h3>GymBuddy: making showing up feel achievable</h3><ul class="tags"><li>Built</li><li>Research</li></ul></div>
+<dl><dt>The problem</dt><dd>Beginners join a gym, don&#x27;t know what to do, feel overwhelmed and stop going. In a CDC survey of 525 men who weren&#x27;t meeting activity guidelines, 44.3% named lack of motivation as a barrier.</dd><dt>What I decided</dt><dd>V1 is a simple workout, a monthly target the user sets and a streak. Personalised AI is cut until there is behaviour data to justify it. I built a V1 prototype with Claude, and testing with real beginners is the next step.</dd><dt>What it shows</dt><dd>Cutting scope on purpose, and stating that the hypothesis is not yet proven.</dd></dl>
+</article>
+<article class="project" id="quickbite" data-tags="systems specs">
+<div><p class="ctx">System design brief, food delivery</p><h3>Taking QuickBite from one city to 2 million users</h3><ul class="tags"><li>Systems</li><li>Specs</li></ul></div>
+<dl><dt>The problem</dt><dd>Growth of 400 times in 12 months with an engineering team of fewer than 15. At peak there are about 670 browse reads a second against about 4 order writes a second.</dd><dt>What I decided</dt><dd>Decide what can never be lost (orders, payments, refunds) and what can drift (ratings, ETAs). Run 99.9% availability overall and 99.99% only for order placement and payment, where a failure loses transactions.</dd><dt>What it shows</dt><dd>Working through trade-offs with engineering instead of listing requirements.</dd></dl>
+</article>
+<article class="project" id="vitafit" data-tags="specs growth">
+<div><p class="ctx">PRD, fitness app</p><h3>Connect &amp; Commit: rewards and challenges for VitaFit</h3><ul class="tags"><li>Specs</li><li>Growth</li></ul></div>
+<dl><dt>The problem</dt><dd>Users lose motivation after the first excitement, and on-demand workouts feel transactional, with no lasting link to an instructor.</dd><dt>What I decided</dt><dd>Two features: points and rewards for consistent actions, and instructor-led community challenges, including a prompt for instructors to send a short personal message at milestones. North Star: share of active users completing 3 or more workouts a week.</dd><dt>What it shows</dt><dd>Tying metrics to behaviour, and planning to confirm internal numbers before building.</dd></dl>
+</article>
+<article class="project" id="uber" data-tags="research">
+<div><p class="ctx">Market research, ride-hailing</p><h3>The pickup gap: what goes wrong between booking and boarding</h3><ul class="tags"><li>Research</li></ul></div>
+<dl><dt>The problem</dt><dd>In a LocalCircles survey of about 3,500 frequent users in Bengaluru (Aug 2024), 85% of Uber customers had met at least one issue in 12 months and 46% reported a driver cancelling. Airports, malls, housing complexes and peak-hour streets are where riders and drivers fail to find each other.</dd><dt>What I decided</dt><dd>Research before solutions: public accounts, surveys, regulations and my own earlier driver interviews, then three research-led ideas for a more reliable pickup. Where only Uber holds the numbers, I left the sizing open.</dd><dt>What it shows</dt><dd>Scoping tightly (music, AC, safety and pricing are out) and labelling what I could not know.</dd></dl>
+</article>
+<article class="project" id="nykaa" data-tags="research">
+<div><p class="ctx">Product teardown, beauty e-commerce</p><h3>Why shoppers finish the decision outside Nykaa</h3><ul class="tags"><li>Research</li></ul></div>
+<dl><dt>The problem</dt><dd>I picked one lip balm from 575+ options and spoke to three other shoppers. Three of the four of us checked options outside the app before deciding.</dd><dt>What I decided</dt><dd>Three bets to keep the decision inside the app. The evidence behind them: a Dermatologically Tested filter that listed 4 products and missed one I knew qualified, and a shade preview that never showed my shade worn.</dd><dt>What it shows</dt><dd>Reading a small sample honestly (four people, directional only) and following up when an answer was unclear.</dd></dl>
+</article>
+<article class="project" id="purplle" data-tags="ux">
+<div><p class="ctx">UX evaluation, beauty shopping app</p><h3>Heuristic evaluation and redesign of Purplle&#x27;s shopping flow</h3><ul class="tags"><li>UX</li></ul></div>
+<dl><dt>The problem</dt><dd>Eight usability issues between search and payment, including a Deals arrow that does nothing, an extra Category Stores layer, colour swatches that don&#x27;t match their names and out-of-stock items mixed into listings.</dd><dt>What I decided</dt><dd>Ranked all eight against heuristics and UX laws, then mocked up the three highest-impact fixes: an In stock only filter, a decluttered cart and simpler category navigation.</dd><dt>What it shows</dt><dd>Tying every complaint to a named principle and a concrete recommendation.</dd></dl>
+</article>
+<article class="project" id="brightspring" data-tags="ai built">
+<div><p class="ctx">Built with Claude Code, tutoring website</p><h3>BrightSpring: a tutoring site with tooling that checks itself</h3><ul class="tags"><li>AI</li><li>Built</li></ul></div>
+<dl><dt>The problem</dt><dd>A site built with AI drifts as it grows unless the rules are written down and checked.</dd><dt>What I decided</dt><dd>A design system, validated content, a design-reviewer subagent and a custom skill. I proved each tool by breaking things on purpose: the reviewer caught 3 of 3 planted violations and the validator rejected all 4 broken data files.</dd><dt>What it shows</dt><dd>Directing AI to build reusable tooling, then testing that the tooling really works.</dd></dl>
+</article>
+<article class="project" id="orbitly" data-tags="ai built">
+<div><p class="ctx">AI agents, SaaS customer support</p><h3>Skill, agent, or neither?</h3><ul class="tags"><li>AI</li><li>Built</li></ul></div>
+<dl><dt>The problem</dt><dd>Five support capabilities, and the wrong choice of tool means an expensive mistake goes uncaught.</dd><dt>What I decided</dt><dd>Format goes in skills, volume in agents, risk in code. The result was 2 skills, 2 agents and 1 “neither”. A script rejected a draft that repeated a customer&#x27;s “40%” before it could reach a reply.</dd><dt>What it shows</dt><dd>Deciding where AI belongs by what a miss costs and what would catch it.</dd></dl>
+</article>
+<article class="project" id="zomato" data-tags="growth research">
+<div><p class="ctx">Funnel, cohort and metrics analysis, food delivery</p><h3>Where Zomato&#x27;s food delivery journey loses people</h3><ul class="tags"><li>Growth</li><li>Research</li></ul></div>
+<dl><dt>The problem</dt><dd>Seven stages from opening the app to receiving the order in Tier-1 cities, with a hypothesis for each drop-off.</dd><dt>What I decided</dt><dd>Priority areas: menu to cart first, then cart to checkout, then delivery experience. The numbers are labelled as assumptions until Zomato&#x27;s own data can confirm them.</dd><dt>What it shows</dt><dd>Funnel and cohort analysis, a North Star with ladder metrics, and flagging assumptions as assumptions.</dd></dl>
+</article>
+<!-- New project? Copy one <article> block above and edit it. Tags available: growth strategy specs research ux systems ai built -->
+</div>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<span>Saadurya K V, Chennai</span>
+<span><a href="mailto:saadumukil1426@gmail.com">Email</a> &nbsp; <a href="https://www.linkedin.com/in/saadurya-k-v/">LinkedIn</a> &nbsp; <a href="https://github.com/saadurya">GitHub</a> &nbsp; <a href="resume.pdf">Résumé</a></span>
+</div></footer>
+<script src="site.js"></script>
+</body>
+</html>

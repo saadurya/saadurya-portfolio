@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raise | Saadurya K V</title>
+<meta name="description" content="Helps a parent say the first sentence of a hard talk, then asks what happened.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Raise | Saadurya K V">
+<meta property="og:description" content="Helps a parent say the first sentence of a hard talk, then asks what happened.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%236D28D9'/%3E%3Ctext x='16' y='21.5' font-family='sans-serif' font-size='14' font-weight='700' fill='white' text-anchor='middle'%3ESK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="../index.html">Saadurya K V</a>
+<nav aria-label="Main"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../work.html" aria-current="page">Work</a><a href="../contact.html">Contact</a></nav>
+<button class="theme-btn" type="button" aria-label="Switch theme"></button>
+</div></header>
+<main>
+<section class="case"><div class="wrap">
+<a class="back" href="../work.html#raise">← All case studies</a>
+<div class="case-meta"><span class="pill">0→1</span><span class="year">2026</span></div>
+<h1>Raise</h1>
+<p class="lede">Helps a parent say the first sentence of a hard talk, then asks what happened.</p>
+<p class="case-ctx">0 to 1 product, live app for parents of teenagers. Full title: <em>Raise: helping a parent say the first sentence of a hard conversation</em></p>
+<ul class="tags"><li>0 to 1</li><li>Built</li><li>Research</li></ul>
+<ul class="keynums" aria-label="Key numbers"><li><b>24 of 28</b><span>parents had put a hard talk with their teenager off for over six months</span></li><li><b>1 of 8</b><span>usable first-build entries described a conversation, although 9 of 9 said helpful</span></li><li><b>30 of 30</b><span>release-test requests answered on the last run of the rebuild (27 of 30 on the first)</span></li><li><b>214</b><span>tests passing on the rebuild</span></li></ul>
+<div class="case-body">
+<h2>The problem</h2>
+<ul><li>Parents of 14 to 18-year-olds in India keep putting hard talks off. 24 of 28 parents on my form had done so for over six months, and 13 named a feeling such as fear of saying it wrong or embarrassment.</li><li>Teenagers shut it down by how it starts, not what it is about. A bad time (33%) and lecturing (20%) came first.</li><li>I reached the parents I could reach: 28 parents and 15 teenagers on my form and 31 interviews, mostly people I know, all in English. I said so first and read the results as these parents, not parents in general.</li></ul>
+<h2>What I did</h2>
+<ul><li>I defined success first. A conversation counts as completed when, within 14 days of the plan, she returns, picks an outcome other than “I haven't talked yet” and tells me at least two of four specifics. Opening the app, saving a plan or a bare tap does not count.</li><li>I scoped v1 from the findings and cut the rest on purpose: no article library, streaks, accounts, payments or reminders.</li><li>I wrote an instruction document for the AI (AI-1.0) and put a danger check before it. The app decides what the AI may do, and nothing is written for the teenager.</li><li>I built a first version in three days, then rebuilt it with Claude Code in 16 tasks, one commit each. The rebuild is live at raise-bloom.vercel.app.</li></ul>
+<h2>The decision</h2>
+<ul><li>Raise writes a short plan, not an article: an opener the parent can edit, likely reactions and a moment to choose. There are no accounts and no streaks.</li><li>My first build got opinions. 9 of 9 entries said helpful, but only 1 of 8 usable entries described a conversation, because the feedback box asked for an opinion and never asked what happened. So I rebuilt it to ask what happened.</li><li>In the release test I ran 30 concerns on the real AI, fixed 3 failures and ran it again. Of 20 plans I reviewed, none was unsafe, but 5 had a tone flaw, so 15 of 20 were clean, below my 95% bar.</li></ul>
+<h2>What it shows about how I work</h2>
+<ul><li>Defining success as a conversation the parent can describe, not a tap. The target is 40% completed conversations from 20+ parents.</li><li>Saying what I have not measured. At submission, results from real parents on the rebuild were still to be measured, and the capstone says so. The Dashboard holds only my test rows.</li></ul>
+</div>
+<div class="case-files"><h2>Files</h2>
+<div class="actions"><a class="btn dark" href="https://raise-bloom.vercel.app" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>Open live app</a><a class="btn" href="../case-studies/Raise_Capstone.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>Capstone PDF</a><a class="btn" href="../case-studies/Raise_Supporting_Artifacts.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>Supporting files</a><a class="btn" href="../case-studies/Raise_PRD.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>PRD</a><a class="btn" href="../case-studies/Raise_Step4_Wireframes.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>Wireframes</a><a class="btn" href="../case-studies/Raise_Step4_Journey_Maps.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>Journey maps</a><a class="btn" href="../case-studies/Raise_Step4_Design_Notes.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>Design notes</a></div>
+</div>
+<nav class="pager" aria-label="More case studies"><span></span><a class="next" href="zomato.html"><small>Next →</small><span>Zomato funnel and cohorts</span></a></nav>
+</div></section>
+<section><div class="wrap">
+<div class="section-head"><h2>Hiring for a product role?</h2><p>I'm looking for an associate product manager role. Tell me about the team, and I'll send a full write-up of any case study.</p></div>
+<div class="btn-row" style="margin-top:0"><a class="btn primary" href="../contact.html">Get in touch</a></div>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+<div class="foot-id"><b>Saadurya K V</b><span>Aspiring product manager</span></div>
+<nav class="foot-links" aria-label="Contact links"><a href="https://www.linkedin.com/in/saadurya-k-v/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a><a href="https://github.com/saadurya" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>GitHub</a><a href="mailto:saadumukil1426@gmail.com"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email</a><a href="../resume.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>Resume</a></nav>
+</div></footer>
+<script src="../site.js"></script>
+</body>
+</html>

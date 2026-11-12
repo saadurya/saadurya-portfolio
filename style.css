@@ -119,23 +119,22 @@ main>section.hero{padding:clamp(24px,6vh,72px) 0 var(--sec)}
 .lead h2 em{font-style:italic;color:var(--accent);white-space:nowrap}
 .lead-sub{margin:14px 0 0;max-width:62ch;color:var(--muted)}
 .lead-meta{margin:14px 0 0;font:12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em;color:var(--muted)}
-.num-rows{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid var(--line);text-align:left}
-.num-rows li{display:grid;grid-template-columns:minmax(120px,200px) minmax(0,1fr);gap:6px clamp(24px,4vw,56px);align-items:baseline;padding:24px 0;border-bottom:1px solid var(--line)}
+.num-rows{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid var(--line);text-align:left;display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:24px}
+.num-rows li{grid-column:1/-1;display:grid;grid-template-columns:9rem minmax(0,1fr);column-gap:24px;align-items:baseline;padding:24px 0;border-bottom:1px solid var(--line)}
+@supports (grid-template-columns:subgrid){.num-rows li{grid-template-columns:subgrid}}
 .num-rows li>div{max-width:62ch}
-.num-rows .big{font:700 clamp(30px,3.2vw,40px)/1.1 var(--display);letter-spacing:-.02em;color:var(--accent);white-space:nowrap}
-.num-rows b{display:block;font:600 18px/1.3 var(--display)}
-.num-rows p{margin:4px 0 0;color:var(--muted)}
+.num-rows .big{justify-self:start;font:700 clamp(30px,3.2vw,40px)/1.1 var(--display);letter-spacing:-.02em;color:var(--accent);white-space:nowrap}
+.num-rows b{display:block;font:700 21px/1.3 var(--display)}
+.num-rows p{margin:6px 0 0;color:var(--muted)}
 .num-rows p a{font-weight:600;white-space:nowrap}
 .section-head + .num-rows{margin-top:0}
 .lead-actions{justify-content:flex-start;margin-top:26px}
 .lead-also{margin:14px 0 0;font-size:14px;color:var(--muted)}
 .lead-also a{font-weight:600}
-@media (max-width:640px){.num-rows li{grid-template-columns:1fr}.num-rows .big{font-size:34px}}
+@media (max-width:640px){.num-rows{display:block}.num-rows li{display:grid;grid-template-columns:1fr;row-gap:4px}.num-rows .big{font-size:34px}}
 .empty{color:var(--muted)}
 
 /* about */
-.prose{max-width:62ch}
-.prose p{margin:0 0 16px}
 .job{display:grid;gap:4px 32px;padding:22px 0;border-bottom:1px solid var(--line);grid-template-columns:1fr}
 @media (min-width:760px){.job{grid-template-columns:200px 1fr}}
 .job:first-of-type{border-top:1px solid var(--line)}
@@ -172,7 +171,6 @@ html.snap main>section{scroll-snap-align:start}
 .cta .btn-row{margin-top:28px}
 
 /* about: experience as a scroll section */
-.exp{padding-top:0}
 .exp-grid{display:grid;gap:28px 64px;grid-template-columns:1fr}
 .exp-eyebrow{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .exp-sub{margin:10px 0 0;max-width:36ch;color:var(--muted)}
@@ -227,3 +225,23 @@ html.snap main>section{scroll-snap-align:start}
 .sp-label{margin:0 0 6px;font:600 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;color:var(--muted)}
 .sp-note p:last-child{margin:0}
 .sp-note a{font-weight:600;white-space:nowrap}
+
+/* about: intro in two columns */
+.about-grid{display:grid;gap:24px;grid-template-columns:1fr}
+@media (min-width:900px){.about-grid{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:56px}}
+.about-statement{margin:20px 0 0;font:600 clamp(22px,1.9vw,25px)/1.25 var(--display);letter-spacing:-.01em}
+.about-right{display:grid;gap:24px}
+.ab{padding-top:16px;border-top:1px solid var(--line)}
+.ab p{margin:0;max-width:68ch}
+.ab .ab-label{margin:0 0 10px;font:600 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;color:var(--accent)}
+.habits{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:14px}
+.habits b{display:block}
+.habits span{display:block;color:var(--muted)}
+
+/* about: same hairline above every section after the intro */
+.rule-wrap{padding-bottom:0}
+.rule-line{margin:0;height:1px;border:0;background:var(--line)}
+.about main>section{padding:0 0 calc(var(--sec)/2)}
+.about main>section:first-child{padding-top:64px}
+.about main>section:last-child{padding-bottom:var(--sec)}
+.about .rule-wrap + section{padding-top:calc(var(--sec)/2)}

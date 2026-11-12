@@ -25,22 +25,9 @@
 <main>
 <section><div class="wrap">
 <div class="section-head"><h1 style="font-size:clamp(34px,5vw,52px)">Fourteen case studies</h1>
-<p>Each one covers the problem, the call I made and what it shows about how I work. Each card links to its documents. Where a figure is a planning figure and not a sourced one, the card says so.</p></div>
-<div class="lead" aria-labelledby="lead-h">
-<p class="eyebrow lead-eyebrow">LEAD CASE · 0 → 1</p>
-<h2 id="lead-h">Raise: a live app for a parent's hardest first sentence, <em>0 → 1</em>.</h2>
-<p class="lead-sub">A live app that helps a parent of a 14 to 18-year-old start a hard conversation with a short plan they can edit, then asks what happened.</p>
-<p class="lead-meta">CAPSTONE · AIRTRIBE PM PROGRAM · OCTOBER 2026 · LIVE APP</p>
-<ol class="lead-rows">
-<li><span class="big">28 + 15 + 31</span><div><b>Who I asked</b><p>28 parents and 15 teenagers on my form, and 31 interviews. They are mostly people I know, so I read the results as these parents, not parents in general.</p></div></li>
-<li><span class="big">214</span><div><b>Tests passing on the rebuild</b><p>The rebuild is live and was built in sixteen tasks, one commit each.</p></div></li>
-<li><span class="big">30 of 30</span><div><b>Concerns answered on the final release-test run</b><p>The first run on the real AI answered 27 of 30. I fixed the failures and ran it again.</p></div></li>
-<li><span class="big">15 of 20</span><div><b>Plans with no flaw, below my 95% bar</b><p>I reviewed 20 of the 30 plans. None was unsafe, and 5 had a minor tone or copy flaw.</p></div></li>
-<li><span class="big">40%</span><div><b>The target for completed conversations</b><p>From 20+ parents, 14 days after each plan. It is a target: results from real parents on the rebuild are yet to be measured.</p></div></li>
-</ol>
-<div class="actions lead-actions"><a class="btn dark" href="https://raise-bloom.vercel.app" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>Open live app</a><a class="btn" href="case-studies/Raise_Capstone.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>Capstone PDF</a></div>
-<p class="lead-also">Also: <a href="case-studies/Raise_Step4_Wireframes.pdf" target="_blank" rel="noopener noreferrer">Wireframes</a> · <a href="case-studies/Raise_Step4_Journey_Maps.pdf" target="_blank" rel="noopener noreferrer">Journey maps</a> · <a href="case-studies/Raise_Step4_Design_Notes.pdf" target="_blank" rel="noopener noreferrer">Design notes</a></p>
-</div>
+<p>Each card links to its documents. Where a figure is a planning figure and not a sourced one, the card says so.</p></div>
+<div class="seg" role="tablist" aria-label="Work view"><button type="button" role="tab" id="tab-all" aria-selected="true" aria-controls="panel-all">14 projects</button><button type="button" role="tab" id="tab-lead" aria-selected="false" aria-controls="panel-lead" tabindex="-1">0 → 1</button></div>
+<div role="tabpanel" id="panel-all" aria-labelledby="tab-all">
 <ul class="filters" aria-label="Filter by type"><li><button type="button" data-tag="all" aria-pressed="true">All</button></li><li><button type="button" data-tag="zero-to-one" aria-pressed="false">0→1</button></li><li><button type="button" data-tag="analytics" aria-pressed="false">Analytics</button></li><li><button type="button" data-tag="growth" aria-pressed="false">Growth</button></li><li><button type="button" data-tag="research" aria-pressed="false">Research</button></li><li><button type="button" data-tag="automation" aria-pressed="false">Automation</button></li></ul>
 <p class="empty" id="count" aria-live="polite">14 projects</p>
 <div class="projects">
@@ -168,6 +155,24 @@
 <!-- New project? Copy one <article> block above and edit it. Tags available: growth strategy specs research ux systems ai built -->
 </div>
 <p class="more-wrap" hidden><button type="button" class="show-more" id="toggle" aria-expanded="false">Show all 14 projects</button></p>
+</div>
+<div role="tabpanel" id="panel-lead" aria-labelledby="tab-lead" hidden>
+<div class="lead" id="lead" aria-labelledby="lead-h">
+<p class="eyebrow lead-eyebrow">LEAD CASE · 0 → 1</p>
+<h2 id="lead-h">Raise: a live app for a parent's hardest first sentence, <em>0 → 1</em>.</h2>
+<p class="lead-sub">A live app that helps a parent of a 14 to 18-year-old start a hard conversation with a short plan they can edit, then asks what happened.</p>
+<p class="lead-meta">CAPSTONE · AIRTRIBE PM PROGRAM · OCTOBER 2026 · LIVE APP</p>
+<ol class="num-rows">
+<li><span class="big">28 + 15 + 31</span><div><b>Who I asked</b><p>28 parents and 15 teenagers on my form, and 31 interviews. They are mostly people I know, so I read the results as these parents, not parents in general.</p></div></li>
+<li><span class="big">214</span><div><b>Tests passing on the rebuild</b><p>The rebuild is live and was built in sixteen tasks, one commit each.</p></div></li>
+<li><span class="big">30 of 30</span><div><b>Concerns answered on the final release-test run</b><p>The first run on the real AI answered 27 of 30. I fixed the failures and ran it again.</p></div></li>
+<li><span class="big">15 of 20</span><div><b>Plans with no flaw, below my 95% bar</b><p>I reviewed 20 of the 30 plans. None was unsafe, and 5 had a minor tone or copy flaw.</p></div></li>
+<li><span class="big">40%</span><div><b>The target for completed conversations</b><p>From 20+ parents, 14 days after each plan. It is a target: results from real parents on the rebuild are yet to be measured.</p></div></li>
+</ol>
+<div class="actions lead-actions"><a class="btn dark" href="https://raise-bloom.vercel.app" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>Open live app</a><a class="btn" href="case-studies/Raise_Capstone.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>Capstone PDF</a></div>
+<p class="lead-also">Also: <a href="case-studies/Raise_Step4_Wireframes.pdf" target="_blank" rel="noopener noreferrer">Wireframes</a> · <a href="case-studies/Raise_Step4_Journey_Maps.pdf" target="_blank" rel="noopener noreferrer">Journey maps</a> · <a href="case-studies/Raise_Step4_Design_Notes.pdf" target="_blank" rel="noopener noreferrer">Design notes</a></p>
+</div>
+</div>
 </div></section>
 </main>
 <footer class="site-foot"><div class="wrap">

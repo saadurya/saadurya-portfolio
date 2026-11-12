@@ -34,7 +34,7 @@ if(bar){
   // arriving via #lead opens the 0 → 1 tab; #id opens the projects tab with every card shown
   const reveal=()=>{const id=location.hash&&decodeURIComponent(location.hash.slice(1)),t=id&&document.getElementById(id);
     if(!t)return;
-    if(id==='lead'){showPanel('panel-lead');t.scrollIntoView({behavior:'instant'});return}
+        if(t.closest('#panel-lead')){showPanel('panel-lead');t.scrollIntoView({behavior:'instant'});return}
     if(t.classList.contains('project')){showPanel('panel-all');tag='all';open=true;render();t.scrollIntoView({behavior:'instant'})}};
   render();reveal();addEventListener('hashchange',reveal)}
 
@@ -48,3 +48,23 @@ if(exp){
     const a=jobs[0].getBoundingClientRect().top,b=jobs[jobs.length-1].getBoundingClientRect().top;
     fill.style.width=Math.max(0,Math.min(1,(line-a)/(b-a)))*100+'%'};
   addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update()}
+
+// about: skills tabs (without JavaScript every panel stays visible)
+const skills=document.querySelector('.skills-tabs');
+if(skills){
+  const panels=[...skills.querySelectorAll('.spanel')];
+  const list=document.createElement('div');list.className='stabs';list.setAttribute('role','tablist');list.setAttribute('aria-label','Skills and tools');
+  panels.forEach(p=>{const b=document.createElement('button'),n=document.createElement('span');
+    b.type='button';b.setAttribute('role','tab');b.id='st-'+p.id;b.setAttribute('aria-controls',p.id);
+    n.className='n';n.textContent=p.querySelectorAll('.chips li').length;
+    b.append(p.querySelector('h3').textContent,n);
+    p.setAttribute('role','tabpanel');p.setAttribute('aria-labelledby',b.id);list.append(b)});
+  skills.classList.add('js-tabs');skills.prepend(list);
+  const st=[...list.children];
+  const pick=(i,focus)=>st.forEach((t,j)=>{const on=i===j;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;panels[j].hidden=!on;if(on&&focus)t.focus()});
+  st.forEach((t,i)=>t.addEventListener('click',()=>pick(i)));
+  list.addEventListener('keydown',e=>{
+    const i=st.findIndex(t=>t.getAttribute('aria-selected')==='true');
+    const to={ArrowRight:(i+1)%st.length,ArrowLeft:(i+st.length-1)%st.length,Home:0,End:st.length-1}[e.key];
+    if(to===undefined)return;pick(to,true);e.preventDefault()});
+  pick(0)}

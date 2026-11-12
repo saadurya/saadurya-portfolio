@@ -131,3 +131,6 @@ section{padding:64px 0}
 .foot-links a:hover{color:var(--accent)}
 .eyebrow{margin:0 0 14px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 @media (max-width:600px){.site-head nav{order:3;width:100%}}
+
+.project .links{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0}
+.project .links .btn{padding:7px 14px;font-size:14px}

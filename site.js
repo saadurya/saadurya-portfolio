@@ -38,16 +38,24 @@ if(bar){
     if(t.classList.contains('project')){showPanel('panel-all');tag='all';open=true;render();t.scrollIntoView({behavior:'instant'})}};
   render();reveal();addEventListener('hashchange',reveal)}
 
-// about: experience counter and progress line
-const exp=document.querySelector('.exp');
-if(exp){
-  const jobs=[...exp.querySelectorAll('.xjob')],cur=document.getElementById('exp-cur'),fill=exp.querySelector('.exp-bar i');
-  const update=()=>{const line=innerHeight*.33;let n=1;
-    jobs.forEach((j,i)=>{if(j.getBoundingClientRect().top<=line)n=i+1});
-    cur.textContent=String(n).padStart(2,'0');
-    const a=jobs[0].getBoundingClientRect().top,b=jobs[jobs.length-1].getBoundingClientRect().top;
-    fill.style.width=Math.max(0,Math.min(1,(line-a)/(b-a)))*100+'%'};
+// about: the experience line fills as you scroll through the timeline
+const tl=document.querySelector('.timeline');
+if(tl){
+  const update=()=>{const r=tl.getBoundingClientRect();
+    tl.style.setProperty('--p',Math.max(0,Math.min(1,(innerHeight*.6-r.top)/r.height)))};
   addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update()}
+
+// about: "On this page" index follows the right column
+const pageIndex=document.querySelector('.about-index');
+if(pageIndex){
+  const links=[...pageIndex.querySelectorAll('a')],blocks=links.map(a=>document.getElementById(a.hash.slice(1)));
+  const mark=i=>links.forEach((a,j)=>j===i?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current'));
+  const inBand=new Set();mark(0);
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{const i=blocks.indexOf(e.target);e.isIntersecting?inBand.add(i):inBand.delete(i)});
+    if(inBand.size)mark(Math.max(...inBand))},{rootMargin:'-30% 0px -60% 0px'});
+  blocks.forEach(b=>io.observe(b));
+  links.forEach((a,i)=>a.addEventListener('click',()=>mark(i)))}
 
 // about: skills tabs (without JavaScript every panel stays visible)
 const skills=document.querySelector('.skills-tabs');

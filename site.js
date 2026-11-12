@@ -1,7 +1,7 @@
 // theme toggle: remembers the choice, falls back to the system setting
 const root=document.documentElement,btn=document.querySelector('.theme-btn');
 try{const t=localStorage.getItem('theme');if(t)root.dataset.theme=t}catch(e){}
-const isDark=()=>root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+const isDark=()=>root.dataset.theme==='dark';
 const paint=()=>{if(btn){btn.textContent=isDark()?'☀':'☾';btn.setAttribute('aria-label',isDark()?'Switch to light theme':'Switch to dark theme')}};
 paint();
 btn&&btn.addEventListener('click',()=>{const n=isDark()?'light':'dark';root.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}paint()});

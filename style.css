@@ -1,17 +1,11 @@
 :root{
   --bg:#FBFAF6; --surface:#FFFFFF; --ink:#16212F; --muted:#556070; --line:#E3E0D6;
-  --accent:#0F766E; --accent-ink:#FFFFFF; --soft:#FFE8D8; --soft-ink:#6B3A1F;
+  --accent:#C2410C; --accent-ink:#FFFFFF; --soft:#FFEDD5; --soft-ink:#7C2D12;
   --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"Instrument Sans",system-ui,sans-serif;
 }
 :root[data-theme="dark"]{
   --bg:#0F1720; --surface:#16212C; --ink:#EAF0F2; --muted:#9FADB8; --line:#263544;
   --accent:#4FD1C0; --accent-ink:#0F1720; --soft:#3A2A22; --soft-ink:#FFD9C2;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0F1720; --surface:#16212C; --ink:#EAF0F2; --muted:#9FADB8; --line:#263544;
-    --accent:#4FD1C0; --accent-ink:#0F1720; --soft:#3A2A22; --soft-ink:#FFD9C2;
-  }
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -41,8 +35,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 
 /* type */
 h1,h2,h3{font-family:var(--display);line-height:1.12;letter-spacing:-.02em;margin:0}
-h1{font-size:clamp(34px,min(5vw,8.5vh),64px);font-weight:700}
-h2{font-size:clamp(28px,3.6vw,38px);font-weight:700}
+h1{font-size:clamp(40px,min(6.2vw,9.5vh),80px);font-weight:700;text-shadow:0 3px 0 rgba(194,65,12,.18),0 6px 14px rgba(22,33,47,.12)}
+h2{font-size:clamp(32px,4.4vw,48px);font-weight:700;text-shadow:0 2px 0 rgba(194,65,12,.15),0 4px 10px rgba(22,33,47,.10)}
 h3{font-size:22px;font-weight:600}
 .lede{font-size:clamp(17px,min(2vw,3.4vh),21px);color:var(--muted);max-width:56ch;margin:clamp(12px,2.6vh,20px) 0 0}
 .note{font-size:15px;color:var(--muted);margin:18px 0 0;max-width:52ch}

@@ -8,10 +8,10 @@
   --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"Instrument Sans",system-ui,sans-serif;
 }
 :root[data-theme="dark"]{
-  --bg:#2E2839; --surface:#393246; --ink:#F6EFDF; --muted:#CFC6DC; --line:#554B69;
-  --accent:#C4B0F2; --accent-ink:#241C33; --soft:#463B66; --soft-ink:#E8DFFB;
-  --t-zero-bg:#463B66; --t-zero-ink:#E8DFFB; --t-an-bg:#3B3C72; --t-an-ink:#DDDDFB; --t-gr-bg:#5A3454; --t-gr-ink:#F7DDF0; --t-re-bg:#5A4B2C; --t-re-ink:#F5E6C0; --t-au-bg:#34495F; --t-au-ink:#D8E6F6;
-  --shadow:0 8px 24px rgba(24,18,34,.22); --shadow-sm:0 2px 8px rgba(24,18,34,.18); --tshadow:none;
+  --bg:#2B2140; --surface:#382C55; --ink:#FBF4E4; --muted:#D3C8E6; --line:#4E4175;
+  --accent:#F2C46D; --accent-ink:#2A1B05; --soft:#4A3A78; --soft-ink:#EADFFF;
+  --t-zero-bg:#4A3A78; --t-zero-ink:#EADFFF; --t-an-bg:#40408F; --t-an-ink:#E1E1FF; --t-gr-bg:#6B3A7F; --t-gr-ink:#F9DFF3; --t-re-bg:#58408C; --t-re-ink:#EFE2FF; --t-au-bg:#3B4F86; --t-au-ink:#D9E5FF;
+  --shadow:0 8px 24px rgba(14,8,30,.30); --shadow-sm:0 2px 8px rgba(14,8,30,.26); --tshadow:none;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -306,3 +306,17 @@ html.snap main>section{scroll-snap-align:start}
 .ab .ab-take{margin:0 0 10px;font:600 20px/1.3 var(--display);color:var(--ink)}
 .tl-tags{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;padding:0}
 .tl-tags li{padding:6px 10px;border-radius:999px;background:var(--soft);color:var(--soft-ink);font-size:13px;line-height:1.2}
+
+/* dark theme: plum and gold. Gold is the highlight, violet carries tags, chips and toggles. */
+:root[data-theme="dark"] .hero{background:radial-gradient(900px 420px at 15% 0%,rgba(160,130,240,.16),transparent 70%)}
+:root[data-theme="dark"] .filters button[aria-pressed="true"]{background:var(--soft);color:var(--soft-ink);border-color:var(--soft)}
+:root[data-theme="dark"] .seg{background:var(--surface);border:1px solid var(--line)}
+:root[data-theme="dark"] .seg button{color:var(--muted)}
+:root[data-theme="dark"] .seg button:hover{background:transparent;color:var(--ink)}
+:root[data-theme="dark"] .seg button[aria-selected="true"]{background:var(--soft);color:var(--soft-ink)}
+:root[data-theme="dark"] .pill{color:var(--soft-ink)}
+:root[data-theme="dark"] .tags li,:root[data-theme="dark"] .chips li{background:var(--soft);color:var(--soft-ink);border-color:transparent}
+:root[data-theme="dark"] .cred .cred-figure{color:var(--soft-ink)}
+:root[data-theme="dark"] .stabs .n{opacity:1;color:var(--muted)}
+:root[data-theme="dark"] .stabs button[aria-selected="true"] .n{color:var(--accent-ink)}
+:root[data-theme="dark"] .project .figure{color:var(--soft-ink)}

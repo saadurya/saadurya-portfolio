@@ -1,7 +1,25 @@
 // Motion v2: words rise, cards swing, counters, timelines, progress bar. No library; transform, opacity and clip-path only.
 (()=>{
 const de=document.documentElement;
-if(matchMedia('(prefers-reduced-motion:reduce)').matches||!('IntersectionObserver' in window))return;
+const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const tl=document.querySelector('.timeline');
+if(tl){
+  const wire=tl.querySelector('.tl-wire'),base=[...wire.querySelectorAll('.tl-wire-base path')],draw=[...wire.querySelectorAll('.tl-wire-draw path')];
+  const updateWire=()=>{
+    if(innerWidth<1100){tl.classList.remove('tl-wire-ready');return}
+    const items=[...tl.querySelectorAll('.tl-item')],dots=items.map(it=>it.querySelector('.tl-dot').getBoundingClientRect()),r=tl.getBoundingClientRect();
+    const pts=dots.map(d=>({x:d.left-r.left+d.width/2,y:d.top-r.top+d.height/2}));
+    const rail=r.width-8,rad=Math.min(18,Math.max(8,(pts[3].y-pts[2].y)/4));
+    const paths=[`M${pts[0].x},${pts[0].y} L${pts[1].x},${pts[1].y} L${pts[2].x},${pts[2].y}`,
+      `M${pts[2].x},${pts[2].y} H${rail-rad} Q${rail},${pts[2].y} ${rail},${pts[2].y+rad} V${pts[3].y-rad} Q${rail},${pts[3].y} ${rail-rad},${pts[3].y} H${pts[3].x}`,
+      `M${pts[3].x},${pts[3].y} L${pts[4].x},${pts[4].y}`];
+    wire.setAttribute('viewBox',`0 0 ${r.width} ${r.height}`);
+    paths.forEach((d,i)=>{base[i].setAttribute('d',d);draw[i].setAttribute('d',d);const len=draw[i].getTotalLength();draw[i].style.setProperty('--wire-length',len);draw[i].style.strokeDasharray=len});
+    tl.classList.add('tl-wire-ready');
+  };
+  updateWire();addEventListener('resize',updateWire);
+}
+if(reduced||!('IntersectionObserver' in window))return;
 de.classList.add('js-motion');
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const HEAD='h1,h2,.about-statement,.ab-take',CARD='.project,.stat,.cred',
@@ -67,8 +85,7 @@ $$('[data-count]').forEach(el=>co.observe(el));
 const once=(el,cls,ms,after)=>{if(!el)return;let o;const fire=()=>{if(el._t)return;el._t=performance.now();el.classList.add(cls);if(after)setTimeout(()=>el.classList.add('done'),after);o.disconnect()};o=new IntersectionObserver(es=>{if(es[0].isIntersecting)fire()},{threshold:.2});o.observe(el);setTimeout(fire,ms)};
 once(path,'in',2000,4600);
 // about timeline: line draws left to right, nodes pop in order
-const tl=document.querySelector('.timeline');
-if(tl){$$('.tl-item',tl).forEach((it,i)=>it.style.setProperty('--i',i));once(tl,'in',2000)}
+if(tl){$$('.tl-item',tl).forEach((it,i)=>{it.style.setProperty('--i',i);it.style.setProperty('--node-delay',(i<3?i*.3:1.6+(i-3)*.3)+'s')});once(tl,'in',2000)}
 
 // reading progress bar
 const bar=document.createElement('div');bar.className='progress';bar.setAttribute('aria-hidden','true');document.body.appendChild(bar);

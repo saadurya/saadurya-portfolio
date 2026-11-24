@@ -76,3 +76,17 @@ if(skills){
     const to={ArrowRight:(i+1)%st.length,ArrowLeft:(i+st.length-1)%st.length,Home:0,End:st.length-1}[e.key];
     if(to===undefined)return;pick(to,true);e.preventDefault()});
   pick(0)}
+
+// contact: copy the email address (button is hidden until JS runs; the mailto link works without it)
+const copyBtn=document.getElementById('copy-email');
+if(copyBtn){
+  copyBtn.hidden=false;
+  const status=document.getElementById('copy-status'),mail=document.getElementById('mail');let t;
+  const say=m=>{status.textContent=m;clearTimeout(t);t=setTimeout(()=>{status.textContent=''},5000)};
+  const selectMail=()=>{const r=document.createRange();r.selectNodeContents(mail);const s=getSelection();s.removeAllRanges();s.addRange(r)};
+  copyBtn.addEventListener('click',async()=>{
+    let ok=false;
+    try{await navigator.clipboard.writeText(copyBtn.dataset.email);ok=true}
+    catch(e){selectMail();try{ok=document.execCommand('copy')}catch(e2){}}
+    if(!ok)selectMail();
+    say(ok?'Email address copied.':'Could not copy automatically. The address is selected: press Ctrl+C or Cmd+C.')})}

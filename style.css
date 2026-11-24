@@ -390,3 +390,39 @@ main>section.contact{padding:clamp(32px,6vh,64px) 0}
 .crow-link.primary:focus-visible{outline-color:var(--ink)}
 .contact .copy-status{margin:12px 4px 0}
 @media (prefers-reduced-motion:reduce){.crow-arrow{transition:none}}
+
+/* motion: transform and opacity only; everything is visible without JS or with reduced motion */
+[data-count]{display:inline-block;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:no-preference){
+  .js-motion :is(.wid-card,.stat,.hire-box,.project,.cred,.ab,.contact-card):not(.done){transition:opacity .5s ease,transform .5s ease;transition-delay:var(--d,0ms)}
+  .js-motion :is(.wid-card,.stat,.hire-box,.project,.cred,.ab,.contact-card):not(.in):not(.done){opacity:0;transform:translateY(24px)}
+  .js-motion :is(.wid-card,.stat,.hire-box,.project,.cred,.ab,.contact-card).in{opacity:1;transform:none}
+  /* hero entrance, once on load */
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}}
+  .js .hero-title>*{animation:rise .5s ease backwards}
+  .js .hero-title>h1{animation-delay:.05s}
+  .js .hero-main>*{animation:rise .45s ease backwards}
+  .js .hero-main>:nth-child(1){animation-delay:.25s}.js .hero-main>:nth-child(2){animation-delay:.32s}.js .hero-main>:nth-child(3){animation-delay:.39s}.js .hero-main>:nth-child(4){animation-delay:.46s}
+  .js .path-title{animation:rise .4s ease .5s backwards}
+  .js .path li{animation:rise .35s ease backwards}
+  .js .path li:nth-child(1){animation-delay:.55s}.js .path li:nth-child(2){animation-delay:.62s}.js .path li:nth-child(3){animation-delay:.69s}.js .path li:nth-child(4){animation-delay:.76s}.js .path li:nth-child(5){animation-delay:.83s}.js .path li:nth-child(6){animation-delay:.9s}.js .path li:nth-child(7){animation-delay:.97s}
+  /* timeline: the line draws down, dots light in order */
+  .js-motion .path{position:relative;border-left-color:transparent}
+  .js-motion .path::before{content:"";position:absolute;left:-2px;top:0;bottom:0;width:2px;background:var(--line);transform:scaleY(0);transform-origin:top}
+  .js-motion .path.in::before{transform:none;transition:transform 1s ease .3s}
+  @keyframes dot{0%{opacity:0;transform:scale(.4)}60%{opacity:1;transform:scale(1.3);background:var(--accent)}}
+  .js-motion .path li::before{opacity:0}
+  .js-motion .path.in li::before{opacity:1;animation:dot .45s ease backwards}
+  .js-motion .path.in li:nth-child(1)::before{animation-delay:.3s}.js-motion .path.in li:nth-child(2)::before{animation-delay:.45s}.js-motion .path.in li:nth-child(3)::before{animation-delay:.6s}.js-motion .path.in li:nth-child(4)::before{animation-delay:.75s}.js-motion .path.in li:nth-child(5)::before{animation-delay:.9s}.js-motion .path.in li:nth-child(6)::before{animation-delay:1.05s}.js-motion .path.in li:nth-child(7)::before{animation-delay:1.2s}
+  /* reading progress */
+  .progress{position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;z-index:60;pointer-events:none}
+  /* hover lift */
+  @media (hover:hover){.btn:hover,.box:hover,.project:hover{transform:translateY(-2px)}}
+  .btn{transition:background .15s,color .15s,transform .15s}
+  .box{transition:transform .15s}
+  /* page wipe */
+  html::after{content:"";position:fixed;inset:0;z-index:100;background:var(--accent);transform:translateY(100%);pointer-events:none;visibility:hidden}
+  html.wipe-out::after{visibility:visible;transform:none;transition:transform .45s cubic-bezier(.7,0,.3,1)}
+  html.wipe-in::after{visibility:visible;animation:wipein .45s cubic-bezier(.7,0,.3,1) forwards}
+  @keyframes wipein{from{transform:none}to{transform:translateY(-100%)}}
+}
